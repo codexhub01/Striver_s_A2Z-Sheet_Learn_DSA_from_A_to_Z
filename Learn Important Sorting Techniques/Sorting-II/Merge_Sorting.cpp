@@ -33,21 +33,21 @@ void merge_sort_final(vector<int>& nums , int low , int mid , int high)
     right++;
    }
 
-   for(int i = low ; i < high ; i++)
+   for(int i = low ; i <=high ; i++)
    {
         nums[i] = temp[i-low];
    }
 }
 
-void mergeSort(vector<int>& nums , int low , int high) 
+void mS(vector<int>& nums , int low , int high) 
 {
     if(low==high)
     {
         return;
     }
     int mid = (low+high)/2;
-    mergeSort(nums , low , mid );
-    mergeSort(nums , mid+1 , high);
+    mS(nums , low , mid );
+    mS(nums , mid+1 , high);
     merge_sort_final(nums , low , mid, high);
 
 }
@@ -56,10 +56,10 @@ void mergeSort(vector<int>& nums , int low , int high)
 int main()
 {
     vector<int> arr = {7, 4, 1, 5, 3};
-    mergeSort(arr , 0 , arr.size()-1);
-   for(int i = 0 ; i < arr.size() ; i++)
-   {
-        cout << arr[i] << " " ;
-   }
+    mS(arr , 0 , arr.size()-1);
+    for(int i = 0 ; i < arr.size() ; i++)
+    {
+            cout << arr[i] << " " ;
+    }
 
 }
